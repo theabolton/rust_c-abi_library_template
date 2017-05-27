@@ -2,6 +2,7 @@ language: python
 python:
   - "3.5"
 install:
+  - rustup toolchain install stable
   - cargo build
 script:
   - python tests.py
