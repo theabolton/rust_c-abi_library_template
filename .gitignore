@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# cargo
+Cargo.lock
+# target/ added above
