@@ -3,6 +3,7 @@ python:
   - "3.5"
 install:
   - curl https://sh.rustup.rs -sSf | sh -s -- -y
+  - export PATH="$PATH:~/.cargo/bin"
   - rustup toolchain install stable
   - cargo build
 script:
