@@ -7,4 +7,4 @@ install:
   - rustup toolchain install stable
   - cargo build
 script:
-  - python tests.py
+  - python python_test.py

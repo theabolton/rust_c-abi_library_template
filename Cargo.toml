@@ -1,13 +1,10 @@
 [package]
-name = "abcparser_peg"
+name = "rust_c-abi_library_template"
 version = "0.1.0"
-description = "A parsing expression grammar (PEG) parser for ABC, written in Rust"
+description = "A template for building C-ABI Rust libraries to be called from other languages."
 authors = ["Sean Bolton <sean@smbolton.com>"]
 license = "MIT"
 
-[dependencies]
-pest = "^0.4.1"
-
 [lib]
-path = "src/abcparser_peg.rs"
+#path = "src/my_lib_name.rs"
 crate-type = ["cdylib"]
