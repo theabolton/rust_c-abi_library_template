@@ -1,7 +1,11 @@
 # Rust C-ABI Library Template
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![Build Status](https://travis-ci.org/smbolton/rust_c-abi_library_template.svg?branch=master)](https://travis-ci.org/smbolton/rust_c-abi_library_template)
+
 A minimal template for building a Rust library and calling it from C-ABI
-langauges including C, JavaScript (Node.js), Lua, and Python.
+languages including C, JavaScript (Node.js), Lua, and Python.
 
 The minimal library, [src/lib.rs](src/lib.rs), includes a landing pad to catch
 panics in the Rust code and prevent them from cross the FFI boundary. The main
@@ -17,13 +21,15 @@ pub struct CallResult {
 }
 ```
 
-The landing pad will return whatever its protected code returns, unless a
-panic occurs, in which case, it returns a ``status`` of 2 and a ``text``
-message describing the panic.
+The landing pad in ``rust_function()`` will use this struct to return whatever
+its protected code returns, unless a panic occurs. When a panic is caught, it
+returns a ``status`` of 2 and a ``text`` message describing the panic.
 
 Since the ``CallResult`` struct is allocated by Rust, it must be freed by
 Rust, so the calling application must call ``free_result()`` to release the
 memory.
+
+## Travis Continuous Integration
 
 Also included is a Travis-CI configuration for building a Rust library as part
 of a project written in another language (in this case, Python). At present,
