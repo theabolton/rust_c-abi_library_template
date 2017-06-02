@@ -1,0 +1,25 @@
+{
+  "name": "rust_c-abi_library_template",
+  "version": "0.1.0",
+  "description": "A template for building C-ABI Rust libraries to be called from other languages.",
+  "author": "Sean Bolton <sean@smbolton.com>",
+  "license": "MIT",
+
+  "dependencies": {
+    "ffi": "^2.2.0",
+    "ref-struct": "^1.1.0"
+  },
+  "devDependencies": {},
+  "main": "node_test.js",
+  "scripts": {
+    "test": "node node_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smbolton/rust_c-abi_library_template.git"
+  },
+  "keywords": [
+    "Rust",
+    "FFI"
+  ]
+}
