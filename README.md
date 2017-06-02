@@ -40,7 +40,7 @@ built and run somewhat like this:
 ```sh
 $ cargo build
 $ gcc -Wall -O2 -o c_test c_test.c -L target/debug -lrust_c_abi_library_template
-$ LD_LIBRARY_PATH=target/debug ./ffi_test
+$ LD_LIBRARY_PATH=target/debug ./c_test
 ```
 
 ## Lua
