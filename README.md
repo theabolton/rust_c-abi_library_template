@@ -6,14 +6,14 @@ langauges including C, JavaScript (Node.js), Lua, and Python.
 The minimal library, [src/lib.rs](src/lib.rs), includes a landing pad to catch
 panics in the Rust code and prevent them from cross the FFI boundary. The main
 function ``rust_function()`` expects to receive a C string as an argument, and
-returns a pointer to a C-formatted struct containing a result code and a C
-string message or payload:
+returns a pointer to a C-formatted struct containing a result code and a pointer
+to a C string message or payload:
 
 ```rust
 #[repr(C)]
 pub struct CallResult {
-   status: i32,       // 0: success,      1: failure,         2: panic caught
-   text: *mut c_char  // success message, failure message, or panic message
+   status: i32,
+   text: *mut c_char
 }
 ```
 
@@ -73,6 +73,17 @@ Example:
 $ cargo build
 $ npm install
 $ node node_test.js
+```
+
+## Python
+
+The ``python_test.py`` test application will run under Python 2 or 3, using
+the standard library ``ctypes`` module.
+
+Example:
+```sh
+$ cargo build
+$ python python_test.py
 ```
 
 ## License
